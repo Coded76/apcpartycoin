@@ -86,7 +86,7 @@ export default function Home() {
   return (
     <div className="acp-page">
       <nav className={`navbar ${scrollPosition > 50 ? 'navbar-scrolled' : ''}`}>
-        <h1 className="logo">$ACP</h1>
+        <h1 className="logo">$APC</h1>
         <button 
           className="mobile-menu-btn" 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -107,10 +107,10 @@ export default function Home() {
         <div className="hero-content">
           <h2 className="fade-in">The Village Is Getting Rich.</h2>
           <h2 className="fade-in" style={{animationDelay: '0.2s'}}>President Bola Ahmed Tinubu Is Throwing A Party For All $APC Coin Holders.</h2>
-          <p className="fade-in" style={{animationDelay: '0.4s'}}>$ACP — African Coins Party Token.</p>
+          <p className="fade-in" style={{animationDelay: '0.4s'}}>$APC — APC Party Coin Token.</p>
 
           <div className="buttons fade-in" style={{animationDelay: '0.6s'}}>
-            <a href="#" className="btn-primary">Buy $ACP</a>
+            <a href="#" className="btn-primary">Buy $APC</a>
             <a href="https://dexscreener.com/solana/YOURPAIRHERE" target="_blank" rel="noopener noreferrer" className="btn-secondary">
               Dexscreener
             </a>
@@ -173,7 +173,7 @@ export default function Home() {
             <div className="tokenomics-icon">📊</div>
             <h2>Supply</h2>
             <p className="tokenomics-value">1,000,000,000</p>
-            <p className="tokenomics-label">$ACP Tokens</p>
+            <p className="tokenomics-label">$APC Tokens</p>
           </div>
           <div className="card tokenomics-card">
             <div className="tokenomics-icon">🔐</div>
@@ -194,19 +194,19 @@ export default function Home() {
           Today we talk about profits.</p>
 
           <p>I am your father, I am your grandfather.<br />
-          You go listen to me and buy the coin $ACP.</p>
+          You go listen to me and buy the coin $APC.</p>
 
           <p>The goats are now rich.<br />
           The chickens are now rich.<br />
-          Even the village drummer just bought two phones from $ACP profits.</p>
+          Even the village drummer just bought two phones from $APC profits.</p>
 
           <p>I go tell the police he is not the yahoo boy.</p>
 
-          <p>This is the $ACP era.<br />
+          <p>This is the $APC era.<br />
           A time where everyone eats, everyone dances, and nobody checks the chart in fear.</p>
 
           <p>If you see money falling from the sky, do not panic.<br />
-          It is only $ACP doing its job.</p>
+          It is only $APC doing its job.</p>
 
           <p><i>God bless the village. God bless the party. God bless the holders.</i></p>
 
@@ -220,7 +220,7 @@ export default function Home() {
         <h3>Join The African Coin Party Movement</h3>
         <p className="section-subtitle">Don&apos;t be the only one not dancing in the village.</p>
         <div className="buttons">
-          <a href="#" className="btn-primary btn-large">Buy $ACP Now</a>
+          <a href="#" className="btn-primary btn-large">Buy $APC Now</a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="btn-secondary btn-large">
             Follow on Twitter
           </a>
@@ -231,8 +231,8 @@ export default function Home() {
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-section">
-            <h4>$ACP Token</h4>
-            <p>African Coins Party - A Parody Meme Token</p>
+            <h4>$APC Token</h4>
+            <p>APC Party Coin - A Parody Meme Token</p>
           </div>
           <div className="footer-section">
             <h4>Quick Links</h4>
@@ -252,14 +252,14 @@ export default function Home() {
         <div className="footer-disclaimer">
           <p><b>⚠️ Parody Disclaimer</b></p>
           <p>
-            $ACP is a parody meme token created purely for entertainment purposes.<br />
+            $APC is a parody meme token created purely for entertainment purposes.<br />
             This project is NOT affiliated with APC, any political party, any government organization, or any real political figure.
           </p>
           <p>
             No political endorsement is expressed or implied.<br />
             All content on this website is fictional, satirical, and intended for humor only.
           </p>
-          <p style={{ marginTop: '20px', opacity: 0.8 }}>© 2026 $ACP — African Coins Party. All rights reserved.</p>
+          <p style={{ marginTop: '20px', opacity: 0.8 }}>© 2026 $APC — APC Party Coin. All rights reserved.</p>
         </div>
         </footer>
 

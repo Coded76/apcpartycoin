@@ -1,7 +1,7 @@
 {
-  "name": "$ACP — African Coins Party Token",
-  "short_name": "$ACP Token",
-  "description": "The Village Is Getting Rich. Join the African Coins Party movement!",
+  "name": "$APC — APC Party Coin Token",
+  "short_name": "$APC Token",
+  "description": "The Village Is Getting Rich. Join the APC Party Coin movement!",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

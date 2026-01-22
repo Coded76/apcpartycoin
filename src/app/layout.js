@@ -12,26 +12,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "$ACP — African Coins Party Token | The Village Party",
-  description: "The Village Is Getting Rich. President Bola Ahmed Tinubu Is Throwing A Party For All $ACP Coin Holders. Join the African Coins Party movement now!",
-  keywords: "ACP, $ACP, African Coins Party, meme token, crypto token, Solana, village party, Tinubu",
-  authors: [{ name: "$ACP Community" }],
-  creator: "$ACP",
-  publisher: "$ACP",
+  title: "$APC — APC Party Coin Token | The Village Party",
+  description: "The Village Is Getting Rich. President Bola Ahmed Tinubu Is Throwing A Party For All $APC Coin Holders. Join the APC Party Coin movement now!",
+  keywords: "APC, $APC, APC Party Coin, meme token, crypto token, Solana, village party, Tinubu",
+  authors: [{ name: "$APC Community" }],
+  creator: "$APC",
+  publisher: "$APC",
   
   // Open Graph Meta Tags (for Facebook, LinkedIn, etc.)
   openGraph: {
     type: "website",
     url: "https://acpcoin.com",
-    title: "$ACP — African Coins Party Token",
-    description: "The Village Is Getting Rich! Join the party and get rich with $ACP Token. President Bola Ahmed Tinubu approves! 🎉",
-    siteName: "$ACP Token",
+    title: "$APC — APC Party Coin Token",
+    description: "The Village Is Getting Rich! Join the party and get rich with $APC Token. President Bola Ahmed Tinubu approves! 🎉",
+    siteName: "$APC Token",
     images: [
       {
         url: "https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=1200&q=80",
         width: 1200,
         height: 630,
-        alt: "$ACP - African Coins Party Token",
+        alt: "$APC - APC Party Coin Token",
         type: "image/jpeg",
       },
       {
@@ -48,12 +48,12 @@ export const metadata = {
   // Twitter Card Meta Tags
   twitter: {
     card: "summary_large_image",
-    site: "@ACPToken",
-    creator: "@ACPToken",
-    title: "$ACP — African Coins Party Token",
-    description: "The Village Is Getting Rich! Join $ACP and get rich with us. The party never ends! 🎉💰",
+    site: "@APCToken",
+    creator: "@APCToken",
+    title: "$APC — APC Party Coin Token",
+    description: "The Village Is Getting Rich! Join $APC and get rich with us. The party never ends! 🎉💰",
     image: "https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "$ACP Token - African Coins Party",
+    imageAlt: "$APC Token - APC Party Coin",
   },
 
   // Additional Meta Tags

@@ -2,19 +2,19 @@
 export const siteConfig = {
   // Site Information
   site: {
-    name: "$ACP — African Coins Party Token",
-    shortName: "$ACP Token",
-    description: "The Village Is Getting Rich. Join the African Coins Party movement and get rich with $ACP Token!",
-    url: "https://acpcoin.com",
+    name: "$APC — APC Party Coin Token",
+    shortName: "$APC Token",
+    description: "The Village Is Getting Rich. Join the APC Party Coin movement and get rich with $APC Token!",
+    url: "https://apcpartycoin.com",
     locale: "en_US",
     language: "en",
   },
 
   // SEO Keywords
   keywords: [
-    "$ACP",
-    "ACP Token",
-    "African Coins Party",
+    "$APC",
+    "APC Token",
+    "APC Party Coin",
     "meme token",
     "crypto token",
     "Solana",
@@ -27,32 +27,32 @@ export const siteConfig = {
   // Social Media Accounts
   socialMedia: {
     twitter: {
-      handle: "@ACPToken",
-      url: "https://twitter.com/ACPToken",
+      handle: "@APCToken",
+      url: "https://twitter.com/APCToken",
       card: "summary_large_image",
     },
     discord: {
-      url: "https://discord.gg/acptoken",
+      url: "https://discord.gg/apctoken",
       name: "Discord Community",
     },
     telegram: {
-      url: "https://t.me/acptoken",
+      url: "https://t.me/apctoken",
       name: "Telegram Channel",
     },
     instagram: {
       handle: "@ACPToken",
-      url: "https://instagram.com/ACPToken",
+      url: "https://instagram.com/APCToken",
     },
   },
 
   // Share Messages
   shareMessages: {
-    twitter: "$ACP is the party token everyone's talking about! 🎉 The Village is getting rich. Join the movement now! #ACPToken #CryptoParty",
-    facebook: "The Village Is Getting Rich with $ACP! Join the African Coins Party movement today.",
-    whatsapp: "Check out $ACP Token - The Village Is Getting Rich! 🎉💰",
+    twitter: "$APC is the party token everyone's talking about! 🎉 The Village is getting rich. Join the movement now! #APCToken #CryptoParty",
+    facebook: "The Village Is Getting Rich with $APC! Join the APC Party Coin movement today.",
+    whatsapp: "Check out $APC Token - The Village Is Getting Rich! 🎉💰",
     email: {
-      subject: "Join the African Coins Party - $ACP Token",
-      body: "Hey! Have you heard about $ACP Token? The Village is getting rich! Join the African Coins Party movement.",
+      subject: "Join the APC Party Coin - $APC Token",
+      body: "Hey! Have you heard about $APC Token? The Village is getting rich! Join the APC Party Coin movement.",
     },
   },
 
@@ -89,7 +89,7 @@ export const siteConfig = {
   schema: {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "$ACP — African Coins Party Token",
+    "name": "$APC — APC Party Coin Token",
     "url": "https://acpcoin.com",
     "description": "The Village Is Getting Rich. Join the African Coins Party movement!",
     "potentialAction": {
