@@ -1,11 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function Home() {
   const [copiedMsg, setCopiedMsg] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const audioRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +17,56 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Initialize audio and autoplay
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (audio) {
+      // Attempt to autoplay with sound (some browsers require user interaction)
+      audio.volume = 0.5; // Set volume to 50%
+      const autoplayPromise = audio.play();
+      
+      if (autoplayPromise !== undefined) {
+        autoplayPromise
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch((error) => {
+            // Autoplay was prevented, user needs to click play button
+            setIsPlaying(false);
+          });
+      }
+
+      // Update playing state when audio ends
+      const handleEnded = () => {
+        audio.currentTime = 0;
+        audio.play();
+      };
+
+      audio.addEventListener('play', () => setIsPlaying(true));
+      audio.addEventListener('pause', () => setIsPlaying(false));
+      audio.addEventListener('ended', handleEnded);
+
+      return () => {
+        audio.removeEventListener('play', () => setIsPlaying(true));
+        audio.removeEventListener('pause', () => setIsPlaying(false));
+        audio.removeEventListener('ended', handleEnded);
+      };
+    }
+  }, []);
+
+  const toggleAudio = () => {
+    const audio = audioRef.current;
+    if (audio) {
+      if (isPlaying) {
+        audio.pause();
+        setIsPlaying(false);
+      } else {
+        audio.play();
+        setIsPlaying(true);
+      }
+    }
+  };
 
   const copyAddress = () => {
     const text = 'YOUR_CONTRACT_ADDRESS_HERE';
@@ -210,6 +262,35 @@ export default function Home() {
           <p style={{ marginTop: '20px', opacity: 0.8 }}>© 2026 $ACP — African Coins Party. All rights reserved.</p>
         </div>
         </footer>
-      </div>
+
+      {/* Hidden Audio Element */}
+      <audio 
+        ref={audioRef}
+        src="/AUD-20260122-WA0080.m4a"
+        loop
+        crossOrigin="anonymous"
+      />
+
+      {/* Fixed Audio Control Button */}
+      <button
+        className={`audio-control-btn ${isPlaying ? 'playing' : 'paused'}`}
+        onClick={toggleAudio}
+        title={isPlaying ? 'Pause audio' : 'Play audio'}
+        aria-label={isPlaying ? 'Pause audio' : 'Play audio'}
+      >
+        <span className="audio-icon">
+          {isPlaying ? '🔊' : '🔇'}
+        </span>
+        <span className="audio-waves" aria-hidden="true">
+          {isPlaying && (
+            <>
+              <span className="wave wave-1"></span>
+              <span className="wave wave-2"></span>
+              <span className="wave wave-3"></span>
+            </>
+          )}
+        </span>
+      </button>
+    </div>
       );
     }
