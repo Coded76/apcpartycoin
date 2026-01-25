@@ -2,9 +2,9 @@
 export const siteConfig = {
   // Site Information
   site: {
-    name: "$APC — APC Party Coin Token",
-    shortName: "$APC Token",
-    description: "The Village Is Getting Rich. Join the APC Party Coin movement and get rich with $APC Token!",
+    name: "$APC — African Coin Party Token",
+    shortName: "$APC Coin",
+    description: "The Village Don Cash Out. Join the $APC Party Coin now and make the money!",
     url: "https://apcpartycoin.com",
     locale: "en_US",
     language: "en",
@@ -13,7 +13,7 @@ export const siteConfig = {
   // SEO Keywords
   keywords: [
     "$APC",
-    "APC Token",
+    "APC Coin",
     "APC Party Coin",
     "meme token",
     "crypto token",
@@ -47,12 +47,12 @@ export const siteConfig = {
 
   // Share Messages
   shareMessages: {
-    twitter: "$APC is the party token everyone's talking about! 🎉 The Village is getting rich. Join the movement now! #APCToken #CryptoParty",
-    facebook: "The Village Is Getting Rich with $APC! Join the APC Party Coin movement today.",
-    whatsapp: "Check out $APC Token - The Village Is Getting Rich! 🎉💰",
+    twitter: "$APC na the one! The Village don cash out. Come join the party now! 🎉 #APCToken #CryptoParty",
+    facebook: "The Village Don Cash Out with $APC! Join the party now make you get money too.",
+    whatsapp: "Check out $APC Token - The Village Party na boom! 🎉💰",
     email: {
-      subject: "Join the APC Party Coin - $APC Token",
-      body: "Hey! Have you heard about $APC Token? The Village is getting rich! Join the APC Party Coin movement.",
+      subject: "Come Make Money - Join $APC Party Coin",
+      body: "Hey! You hear about $APC Token? The Village is making money! Come party with us now.",
     },
   },
 
@@ -89,9 +89,9 @@ export const siteConfig = {
   schema: {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "$APC — APC Party Coin Token",
+    "name": "$APC — African Coin Party Token",
     "url": "https://acpcoin.com",
-    "description": "The Village Is Getting Rich. Join the African Coins Party movement!",
+    "description": "The Village Don Cash Out. Join the African Coins Party movement!",
     "potentialAction": {
       "@type": "BuyAction",
       "target": "https://dexscreener.com/solana/YOURPAIRHERE",

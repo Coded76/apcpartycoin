@@ -194,7 +194,7 @@ body {
 
 /* Hero Section */
 .hero {
-  background: url("https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=1600&q=80") center/cover;
+  background: url("/hero-bg-image.jpeg") center/cover;
   background-attachment: fixed;
   padding: 140px 20px;
   text-align: center;

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import AirdropSection from '@/components/AirdropSection';
 
 export default function Home() {
   const [copiedMsg, setCopiedMsg] = useState(false);
@@ -95,28 +96,28 @@ export default function Home() {
         </button>
         <div className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
           <a href="#home" onClick={() => scrollToSection('home')}>Home</a>
-          <a href="#tokenomics" onClick={() => scrollToSection('tokenomics')}>Tokenomics</a>
-          <a href="#speech" onClick={() => scrollToSection('speech')}>Presidential Speech</a>
+          <a href="#tokenomics" onClick={() => scrollToSection('tokenomics')}>Money Talk</a>
+          <a href="#speech" onClick={() => scrollToSection('speech')}>Big Man Say</a>
+          <a href="#airdrop" onClick={() => scrollToSection('airdrop')}>Get Airdrop</a>
           <a href="https://dexscreener.com/solana/YOURPAIRHERE" target="_blank" rel="noopener noreferrer">
-            Dexscreener
+            See Price
           </a>
         </div>
       </nav>
 
       <section className="hero" id="home">
         <div className="hero-content">
-          <h2 className="fade-in">The Village Is Getting Rich.</h2>
-          <h2 className="fade-in" style={{animationDelay: '0.2s'}}>President Bola Ahmed Tinubu Is Throwing A Party For All $APC Coin Holders.</h2>
-          <p className="fade-in" style={{animationDelay: '0.4s'}}>$APC — APC Party Coin Token.</p>
+          <h2 className="fade-in">The Village Don Cash Out.</h2>
+          <h2 className="fade-in" style={{animationDelay: '0.2s'}}>Big Man President Bola Ahmed Tinubu Say Make All $APC Holders Come Party.</h2>
+          <p className="fade-in" style={{animationDelay: '0.4s'}}>$APC — The African Coin Party Token.</p>
 
           <div className="buttons fade-in" style={{animationDelay: '0.6s'}}>
-            <a href="#" className="btn-primary">Buy $APC</a>
+            <a href="#" className="btn-primary">Buy $APC Now</a>
             <a href="https://dexscreener.com/solana/YOURPAIRHERE" target="_blank" rel="noopener noreferrer" className="btn-secondary">
-              Dexscreener
-            </a>
+              See Price</a>
           </div>
 
-          <p style={{ marginTop: '40px', fontWeight: '700', fontSize: '1.1rem' }}>Contract Address</p>
+          <p style={{ marginTop: '40px', fontWeight: '700', fontSize: '1.1rem' }}>Coin Address</p>
 
           <div className="copybox fade-in" style={{animationDelay: '0.8s'}}>
             <span id="contract" className="contract-text">YOUR_CONTRACT_ADDRESS_HERE</span>
@@ -130,115 +131,117 @@ export default function Home() {
       </section>
 
       <section className="section narrative-section" id="narrative">
-        <h3>The Narrative</h3>
-        <p className="section-subtitle">How the Village Discovered Wealth</p>
+        <h3>The Story</h3>
+        <p className="section-subtitle">How Village Find Money</p>
         <div className="grid">
           <div className="card card-animated">
             <div className="card-image-wrapper">
-              <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=800&q=80" alt="Village" />
+              <img src="/coin-img-1.jpeg" alt="Village" />
             </div>
             <div className="card-content">
-              <h4>Discovery</h4>
-              <p>The village finally discovered crypto… now everyone is rich.</p>
+              <h4>The Light Shine</h4>
+              <p>Village finally see the money road… now everybody fine well.</p>
             </div>
           </div>
 
           <div className="card card-animated">
             <div className="card-image-wrapper">
-              <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" alt="Party" />
+              <img src="/coin-img-3.jpeg" alt="Party" />
             </div>
             <div className="card-content">
-              <h4>The Party</h4>
-              <p>Food, drinks, music, vibes — the party never ends.</p>
+              <h4>The Jollification</h4>
+              <p>Pepper soup, palm wine, horn blow, dance move — the party no end.</p>
             </div>
           </div>
 
           <div className="card card-animated">
             <div className="card-image-wrapper">
-              <img src="https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=800&q=80" alt="Money" />
+              <img src="/coin-img-2.jpeg" alt="Money" />
             </div>
             <div className="card-content">
-              <h4>Bullish Vibes</h4>
-              <p>Money raining. Everyone smiling. Even the goats are bullish.</p>
+              <h4>Everybody Shine</h4>
+              <p>Money na water. Everybody laugh small. Even the goat see the money well.</p>
             </div>
           </div>
         </div>
       </section>
 
       <section className="section tokenomics-section" id="tokenomics">
-        <h3>Tokenomics</h3>
-        <p className="section-subtitle">The Numbers That Matter</p>
+        <h3>Money Talk</h3>
+        <p className="section-subtitle">The Numbers Them</p>
         <div className="grid tokenomics-grid">
           <div className="card tokenomics-card">
             <div className="tokenomics-icon">📊</div>
-            <h2>Supply</h2>
+            <h2>How Much</h2>
             <p className="tokenomics-value">1,000,000,000</p>
-            <p className="tokenomics-label">$APC Tokens</p>
+            <p className="tokenomics-label">$APC Coin Tokens</p>
           </div>
           <div className="card tokenomics-card">
             <div className="tokenomics-icon">🔐</div>
-            <h2>Liquidity</h2>
-            <p className="tokenomics-value">Forever Locked</p>
-            <p className="tokenomics-label">At the Party</p>
+            <h2>Strong Strong</h2>
+            <p className="tokenomics-value">Forever Lock Down</p>
+            <p className="tokenomics-label">In the Party Place</p>
           </div>
         </div>
       </section>
 
       <section className="section speech-section" id="speech">
-        <h3>Presidential Speech</h3>
-        <p className="section-subtitle">From The Man Himself</p>
+        <h3>Big Man Say</h3>
+        <p className="section-subtitle">From The President Him Self</p>
         <div className="card speech-card">
-          <p><b>My fellow villagers,</b></p>
+          <p><b>My people of the village,</b></p>
 
-          <p>Today we do not talk about politics.<br />
-          Today we talk about profits.</p>
+          <p>Today we no talk about government side.<br />
+          Today we talk about the money side.</p>
 
-          <p>I am your father, I am your grandfather.<br />
-          You go listen to me and buy the coin $APC.</p>
+          <p>I be your papa, I be your big father.<br />
+          Make you listen me and buy the coin $APC.</p>
 
-          <p>The goats are now rich.<br />
-          The chickens are now rich.<br />
-          Even the village drummer just bought two phones from $APC profits.</p>
+          <p>The goat dem done cash out.<br />
+          The fowl dem done cash out.<br />
+          Even the village drummer just buy two phone from $APC money.</p>
 
-          <p>I go tell the police he is not the yahoo boy.</p>
+          <p>I go tell police say he no be internet person.</p>
 
-          <p>This is the $APC era.<br />
-          A time where everyone eats, everyone dances, and nobody checks the chart in fear.</p>
+          <p>This na the $APC time.<br />
+          The time when everybody chop, everybody dance, and nobody check chart because fear go catch am.</p>
 
-          <p>If you see money falling from the sky, do not panic.<br />
-          It is only $APC doing its job.</p>
+          <p>If you see money fall from sky, no fear small.<br />
+          Na only $APC doing the work.</p>
 
-          <p><i>God bless the village. God bless the party. God bless the holders.</i></p>
+          <p><i>God bless the village. God bless the party. God bless the people them that hold the coin.</i></p>
 
           <p className="signature">-President Bola Ahmed Tinubu</p>
 
-          <p style={{ fontSize: '13px', opacity: 0.7, marginTop: '20px' }}>(This speech is fictional and for entertainment only.)</p>
+          <p style={{ fontSize: '13px', opacity: 0.7, marginTop: '20px' }}>(This speech na play play for entertainment only.)</p>
         </div>
       </section>
 
+      <AirdropSection />
+
       <section className="section cta-section">
-        <h3>Join The African Coin Party Movement</h3>
-        <p className="section-subtitle">Don&apos;t be the only one not dancing in the village.</p>
+        <h3>Join the African Coin Party Now</h3>
+        <p className="section-subtitle">No be say make you be the one standing when everybody dance for village.</p>
         <div className="buttons">
-          <a href="#" className="btn-primary btn-large">Buy $APC Now</a>
+          <a href="#" className="btn-primary btn-large">Buy $APC Today</a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="btn-secondary btn-large">
-            Follow on Twitter
-          </a>
+            Follow on Twitter</a>
         </div>
-        <p className="section-subtitle" style={{ marginTop: '30px', fontSize: '0.95rem' }}>🎉 Limited Time Party Offer 🎉</p>
+        <p className="section-subtitle" style={{ marginTop: '30px', fontSize: '0.95rem' }}>🎉 Special Party Time Now 🎉</p>
       </section>
 
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-section">
-            <h4>$APC Token</h4>
-            <p>APC Party Coin - A Parody Meme Token</p>
+            <h4>$APC Coin</h4>
+            <p>APC Party Coin - The Play Play Coin Token</p>
           </div>
           <div className="footer-section">
             <h4>Quick Links</h4>
-            <a href="#narrative">The Narrative</a>
-            <a href="#tokenomics">Tokenomics</a>
-            <a href="#speech">Presidential Speech</a>
+            <a href="#narrative">The Story</a>
+            <a href="#tokenomics">Money Talk</a>
+            <a href="#speech">Big Man Say</a>
+            <a href="#airdrop">Get Airdrop</a>
           </div>
           <div className="footer-section">
             <h4>Follow Us</h4>
@@ -250,14 +253,14 @@ export default function Home() {
           </div>
         </div>
         <div className="footer-disclaimer">
-          <p><b>⚠️ Parody Disclaimer</b></p>
+          <p><b>⚠️ Play Play Warning</b></p>
           <p>
-            $APC is a parody meme token created purely for entertainment purposes.<br />
-            This project is NOT affiliated with APC, any political party, any government organization, or any real political figure.
+            $APC na one play play meme coin for fun and laugh only.<br />
+            This thing no be real or official, no be APC party, no be government, no be real politician business.
           </p>
           <p>
-            No political endorsement is expressed or implied.<br />
-            All content on this website is fictional, satirical, and intended for humor only.
+            No political person support this thing.<br />
+            Everything here na just for the laugh and the fun play.
           </p>
           <p style={{ marginTop: '20px', opacity: 0.8 }}>© 2026 $APC — APC Party Coin. All rights reserved.</p>
         </div>
