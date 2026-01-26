@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import styles from "./AirdropSection.module.css";
-import { supabase } from "@/lib/supabase"; // ← adjust path if your supabase.js is in a different folder
+import { supabase } from "@/lib/supabase";
 
 export default function AirdropSection() {
   const [wallet, setWallet] = useState("");
@@ -10,18 +10,19 @@ export default function AirdropSection() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // ... your existing imports ...
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!wallet.trim()) {
+    const trimmedWallet = wallet.trim();
+
+    // Basic validation
+    if (!trimmedWallet) {
       setMessage("Abeg enter your Solana wallet address first.");
       setIsSuccess(false);
       return;
     }
 
-    if (wallet.length < 32 || wallet.length > 44) {
+    if (trimmedWallet.length < 32 || trimmedWallet.length > 44) {
       setMessage("This no look like correct Solana wallet o.");
       setIsSuccess(false);
       return;
@@ -31,33 +32,52 @@ export default function AirdropSection() {
     setMessage("");
     setIsSuccess(false);
 
-    console.log("Attempting insert with wallet:", wallet.trim());
-    console.log(
-      "Using Supabase URL:",
-      process.env.NEXT_PUBLIC_SUPABASE_URL ? "set" : "MISSING",
-    );
-
     try {
-      const { data, error } = await supabase
-        .from("airdrop_entries")
-        .insert({ wallet: wallet.trim() });
+      /**
+       * OPTIONAL PRE-CHECK (UX IMPROVEMENT)
+       * Still backed by DB unique constraint
+       */
+      const { data: existingWallet, error: checkError } = await supabase
+        .from("airdrop_data")
+        .select("id")
+        .eq("wallet", trimmedWallet)
+        .maybeSingle();
 
-      if (error) {
-        console.error("Supabase error details:", error);
-        throw error;
+      if (checkError) {
+        throw checkError;
       }
 
-      console.log("Insert success:", data);
+      if (existingWallet) {
+        setMessage("This wallet don already enter the draw 🚫");
+        setIsSuccess(false);
+        setLoading(false);
+        return;
+      }
+
+      /**
+       * INSERT WALLET
+       */
+      const { error: insertError } = await supabase
+        .from("airdrop_data")
+        .insert({ wallet: trimmedWallet });
+
+      if (insertError) {
+        // Duplicate wallet (DB-level protection)
+        if (insertError.code === "23505") {
+          setMessage("This wallet don already enter the draw 🚫");
+          setIsSuccess(false);
+          return;
+        }
+
+        throw insertError;
+      }
+
       setMessage("Wallet saved! Good luck – winners every 24hrs 🎉");
       setIsSuccess(true);
       setWallet("");
     } catch (err) {
-      console.error("Full submission error:", err);
-      setMessage(
-        "Error: " +
-          (err.message ||
-            "Check console for details – likely RLS policy issue."),
-      );
+      console.error("Airdrop submission error:", err);
+      setMessage("Something go wrong. Please try again later.");
       setIsSuccess(false);
     } finally {
       setLoading(false);
@@ -70,10 +90,11 @@ export default function AirdropSection() {
 
       <p className={styles.sectionSubtitle}>
         Hold $APC coin in your wallet, drop your Solana wallet address below,
-        <br /> and enter the draw. We dey pick random winners{" "}
+        <br />
+        and enter the draw. We dey pick random winners{" "}
         <strong>every 24 hours</strong>!
-        <br /> abeg don&apos;t submit your wallet multiple times, that one na
-        automatic disqualification!
+        <br />
+        Abeg no submit your wallet multiple times — automatic disqualification!
       </p>
 
       <div className={styles.airdropContainer}>
@@ -83,7 +104,7 @@ export default function AirdropSection() {
           <p className={styles.airdropDescription}>
             No extra cost beyond the $5 purchase. Just paste your Solana wallet
             here. We go send airdrop straight to winners. Make sure na your real
-            wallet you dey use!
+            wallet!
           </p>
 
           <form className={styles.airdropForm} onSubmit={handleSubmit}>
@@ -91,7 +112,7 @@ export default function AirdropSection() {
               type="text"
               placeholder="Your Solana wallet address (e.g. 7x8y...9z)"
               value={wallet}
-              onChange={(e) => setWallet(e.target.value.trim())}
+              onChange={(e) => setWallet(e.target.value)}
               disabled={loading}
               className={styles.walletInput}
               autoComplete="off"
@@ -116,14 +137,16 @@ export default function AirdropSection() {
 
           {message && (
             <p
-              className={`${styles.formMessage} ${isSuccess ? styles.success : styles.error}`}
+              className={`${styles.formMessage} ${
+                isSuccess ? styles.success : styles.error
+              }`}
             >
               {message}
             </p>
           )}
 
           <p className={styles.formNote}>
-            By submitting you confirm say you don buy at least $5 of the coin.
+            By submitting you confirm say you don hold $APC coin.
             One entry per wallet. No multiple submissions abeg.
           </p>
         </div>
