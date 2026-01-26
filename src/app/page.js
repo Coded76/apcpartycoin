@@ -70,7 +70,7 @@ export default function Home() {
   };
 
   const copyAddress = () => {
-    const text = 'YOUR_CONTRACT_ADDRESS_HERE';
+    const text = 'BGWDQQ8L14w5aDkfcoomCJsiDpvVBJvx2yLVCQdRFR8p';
     navigator.clipboard.writeText(text);
     setCopiedMsg(true);
     setTimeout(() => setCopiedMsg(false), 3000);
@@ -99,7 +99,7 @@ export default function Home() {
           <a href="#tokenomics" onClick={() => scrollToSection('tokenomics')}>Money Talk</a>
           <a href="#speech" onClick={() => scrollToSection('speech')}>Big Man Say</a>
           <a href="#airdrop" onClick={() => scrollToSection('airdrop')}>Get Airdrop</a>
-          <a href="https://dexscreener.com/solana/YOURPAIRHERE" target="_blank" rel="noopener noreferrer">
+          <a href="https://dexscreener.com/solana/bqnxy6mtbbjoyqysmm46mrk9gudpxjn49zw7mzryabxa" target="_blank" rel="noopener noreferrer">
             See Price
           </a>
         </div>
@@ -112,15 +112,15 @@ export default function Home() {
           <p className="fade-in" style={{animationDelay: '0.4s'}}>$APC — The African Coin Party Token.</p>
 
           <div className="buttons fade-in" style={{animationDelay: '0.6s'}}>
-            <a href="#" className="btn-primary">Buy $APC Now</a>
-            <a href="https://dexscreener.com/solana/YOURPAIRHERE" target="_blank" rel="noopener noreferrer" className="btn-secondary">
+            <a href="https://dexscreener.com/solana/bqnxy6mtbbjoyqysmm46mrk9gudpxjn49zw7mzryabxa" className="btn-primary">Buy $APC Now</a>
+            <a href="https://dexscreener.com/solana/bqnxy6mtbbjoyqysmm46mrk9gudpxjn49zw7mzryabxa" target="_blank" rel="noopener noreferrer" className="btn-secondary">
               See Price</a>
           </div>
 
           <p style={{ marginTop: '40px', fontWeight: '700', fontSize: '1.1rem' }}>Coin Address</p>
 
           <div className="copybox fade-in" style={{animationDelay: '0.8s'}}>
-            <span id="contract" className="contract-text">YOUR_CONTRACT_ADDRESS_HERE</span>
+            <span id="contract" className="contract-text">BGWDQQ8L14w5aDkfcoomCJsiDpvVBJvx2yLVCQdRFR8p</span>
             <button onClick={copyAddress} className="copy-btn">Copy</button>
           </div>
 
@@ -220,11 +220,11 @@ export default function Home() {
       <AirdropSection />
 
       <section className="section cta-section">
-        <h3>Join the African Coin Party Now</h3>
-        <p className="section-subtitle">No be say make you be the one standing when everybody dance for village.</p>
+        <h3>Join the APC coin party Now</h3>
+        <p className="section-subtitle">No be say make you be the one standing when everybody dey dance for village.</p>
         <div className="buttons">
-          <a href="#" className="btn-primary btn-large">Buy $APC Today</a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="btn-secondary btn-large">
+          <a href="https://dexscreener.com/solana/bqnxy6mtbbjoyqysmm46mrk9gudpxjn49zw7mzryabxa" className="btn-primary btn-large">Buy $APC Today</a>
+          <a href="https://x.com/apccoinsol" target="_blank" rel="noopener noreferrer" className="btn-secondary btn-large">
             Follow on Twitter</a>
         </div>
         <p className="section-subtitle" style={{ marginTop: '30px', fontSize: '0.95rem' }}>🎉 Special Party Time Now 🎉</p>
@@ -246,9 +246,9 @@ export default function Home() {
           <div className="footer-section">
             <h4>Follow Us</h4>
             <div className="social-links">
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-              <a href="#" target="_blank" rel="noopener noreferrer">Discord</a>
-              <a href="#" target="_blank" rel="noopener noreferrer">Telegram</a>
+              <a href="https://x.com/apccoinsol" target="_blank" rel="noopener noreferrer">Twitter</a>
+              {/* <a href="#" target="_blank" rel="noopener noreferrer">Discord</a> */}
+              <a href="https://t.me/apcpartycoin" target="_blank" rel="noopener noreferrer">Telegram</a>
             </div>
           </div>
         </div>

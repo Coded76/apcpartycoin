@@ -1,13 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./AirdropSection.module.css";   // ← must point to .module.css
+import styles from "./AirdropSection.module.css";
+import { supabase } from "@/lib/supabase"; // ← adjust path if your supabase.js is in a different folder
 
 export default function AirdropSection() {
   const [wallet, setWallet] = useState("");
   const [message, setMessage] = useState("");
   const [isSuccess, setIsSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  // ... your existing imports ...
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,32 +31,33 @@ export default function AirdropSection() {
     setMessage("");
     setIsSuccess(false);
 
+    console.log("Attempting insert with wallet:", wallet.trim());
+    console.log(
+      "Using Supabase URL:",
+      process.env.NEXT_PUBLIC_SUPABASE_URL ? "set" : "MISSING",
+    );
+
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbxiE5w2u4-qyIDUAnaiF5jeLJSKuJVoYqH8akvg67ZnS8fQ-3sIfwfwCUEkWGkXct9a/exec", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ wallet }),
-      });
+      const { data, error } = await supabase
+        .from("airdrop_entries")
+        .insert({ wallet: wallet.trim() });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+      if (error) {
+        console.error("Supabase error details:", error);
+        throw error;
       }
 
-      const result = await response.json();
-
-      if (result.status === "success") {
-        setMessage("Wallet saved! Good luck – winners every 24hrs 🎉");
-        setIsSuccess(true);
-        setWallet("");
-      } else {
-        setMessage("Something no work. Try again later.");
-        setIsSuccess(false);
-      }
+      console.log("Insert success:", data);
+      setMessage("Wallet saved! Good luck – winners every 24hrs 🎉");
+      setIsSuccess(true);
+      setWallet("");
     } catch (err) {
-      console.error("Submission error:", err);
-      setMessage("Network issue – check your connection and try again.");
+      console.error("Full submission error:", err);
+      setMessage(
+        "Error: " +
+          (err.message ||
+            "Check console for details – likely RLS policy issue."),
+      );
       setIsSuccess(false);
     } finally {
       setLoading(false);
@@ -65,9 +69,11 @@ export default function AirdropSection() {
       <h3>Come Join the Airdrop</h3>
 
       <p className={styles.sectionSubtitle}>
-        Buy at least <strong>$5</strong> of the coin, drop your Solana wallet address below, 
-        <br /> and enter the draw. We dey pick random winners <strong>every 24 hours</strong>!
-        <br /> abeg don&apos;t submit your wallet multiple times, that one na automatic disqualification!
+        Hold $APC coin in your wallet, drop your Solana wallet address below,
+        <br /> and enter the draw. We dey pick random winners{" "}
+        <strong>every 24 hours</strong>!
+        <br /> abeg don&apos;t submit your wallet multiple times, that one na
+        automatic disqualification!
       </p>
 
       <div className={styles.airdropContainer}>
@@ -75,8 +81,9 @@ export default function AirdropSection() {
           <h4>Submit Your Wallet for the Draw</h4>
 
           <p className={styles.airdropDescription}>
-            No extra cost beyond the $5 purchase. Just paste your Solana wallet here. 
-            We go send airdrop straight to winners. Make sure na your real wallet you dey use!
+            No extra cost beyond the $5 purchase. Just paste your Solana wallet
+            here. We go send airdrop straight to winners. Make sure na your real
+            wallet you dey use!
           </p>
 
           <form className={styles.airdropForm} onSubmit={handleSubmit}>
@@ -116,7 +123,7 @@ export default function AirdropSection() {
           )}
 
           <p className={styles.formNote}>
-            By submitting you confirm say you don buy at least $5 of the coin. 
+            By submitting you confirm say you don buy at least $5 of the coin.
             One entry per wallet. No multiple submissions abeg.
           </p>
         </div>

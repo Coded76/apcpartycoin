@@ -301,7 +301,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 520px;
+  max-width: 620px;
   margin: 20px auto;
   word-break: break-all;
   border: 2px solid rgba(255, 215, 0, 0.2);
